@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">mvvm_skeleton</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_title">LOGIN</string>
+    <string name="login_button">Login</string>
+    <string name="login_username">username</string>
+    <string name="login_password">Password</string>
+</resources>
