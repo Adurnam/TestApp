@@ -7,6 +7,7 @@ buildscript {
         okhttp_version = '4.8.0'
         roomVersion = '2.2.5'
         androidx_cardview = '1.0.0'
+        navigationVersion = '1.0.0'
     }
 
     repositories {

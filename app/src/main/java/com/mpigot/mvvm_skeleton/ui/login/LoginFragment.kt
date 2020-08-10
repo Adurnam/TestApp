@@ -1,6 +1,7 @@
 package com.mpigot.mvvm_skeleton.ui.login
 
 import android.widget.Button
+import androidx.navigation.findNavController
 import com.mpigot.mvvm_skeleton.R
 import com.mpigot.mvvm_skeleton.databinding.FragmentLoginBinding
 import com.mpigot.mvvm_skeleton.ui.base.BaseActivity
@@ -25,7 +26,8 @@ class LoginFragment() : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
         btLogin = binding.btAuthentication
         btLogin.setOnClickListener {
             binding.unbind()
-            (activity as BaseActivity<*, *>).openNewFragment(MainFragment()) }
+            it.findNavController().navigate(R.id.action_loginFragment_to_mainFragment)}
+//            (activity as BaseActivity<*, *>).openNewFragment(MainFragment()) }
     }
 
     override fun setUpObserver() {
