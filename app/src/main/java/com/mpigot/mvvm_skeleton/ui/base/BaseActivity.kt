@@ -6,8 +6,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ViewDataBinding
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.findNavController
 import com.mpigot.mvvm_skeleton.R
 import com.mpigot.mvvm_skeleton.ui.login.LoginFragment
 import com.mpigot.mvvm_skeleton.utils.NetworkUtils
@@ -33,15 +32,12 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel> : AppCompatA
         return NetworkUtils.isNetworkConnected(applicationContext)
     }
 
-    fun openNewFragment(fragment : BaseFragment<*,*>) {
-        val manager : FragmentManager = supportFragmentManager
-        val transaction : FragmentTransaction = manager.beginTransaction()
-        transaction.replace(R.id.fragment_container, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
+    fun openNewFragment(navigation : Int) {
+        var navController = findNavController(R.id.fragment_container)
+        navController.navigate(navigation)
     }
 
     fun openFragmentOnTokenExpire() {
-        openNewFragment(LoginFragment())
+        openNewFragment(R.id.loginFragment)
     }
 }

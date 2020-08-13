@@ -7,6 +7,7 @@ import com.mpigot.mvvm_skeleton.databinding.FragmentLoginBinding
 import com.mpigot.mvvm_skeleton.ui.base.BaseActivity
 import com.mpigot.mvvm_skeleton.ui.base.BaseFragment
 import com.mpigot.mvvm_skeleton.ui.main.MainFragment
+import com.mpigot.mvvm_skeleton.ui.splash.SplashActivity
 
 class LoginFragment() : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
 
@@ -24,10 +25,11 @@ class LoginFragment() : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
 
     override fun setUpUi() {
         btLogin = binding.btAuthentication
+        (activity as SplashActivity).appBarState(false)
         btLogin.setOnClickListener {
             binding.unbind()
-            it.findNavController().navigate(R.id.action_loginFragment_to_mainFragment)}
-//            (activity as BaseActivity<*, *>).openNewFragment(MainFragment()) }
+            (activity as BaseActivity<*, *>)
+                .openNewFragment(R.id.action_loginFragment_to_mainFragment) }
     }
 
     override fun setUpObserver() {

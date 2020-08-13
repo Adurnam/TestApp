@@ -3,6 +3,7 @@ package com.mpigot.mvvm_skeleton.ui.main
 import com.mpigot.mvvm_skeleton.R
 import com.mpigot.mvvm_skeleton.databinding.FragmentMainBinding
 import com.mpigot.mvvm_skeleton.ui.base.BaseFragment
+import com.mpigot.mvvm_skeleton.ui.splash.SplashActivity
 
 class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>() {
 
@@ -18,7 +19,7 @@ class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>() {
     }
 
     override fun setUpUi() {
-
+        (activity as SplashActivity).appBarState(true)
     }
 
     override fun setUpObserver() {
