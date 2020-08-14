@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.google.android.material.navigation.NavigationView
 import com.mpigot.mvvm_skeleton.R
 import com.mpigot.mvvm_skeleton.databinding.ActivitySplashBinding
 import com.mpigot.mvvm_skeleton.ui.base.BaseActivity
@@ -21,6 +22,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
     lateinit var binding : ActivitySplashBinding
     private lateinit var drawerLayout : DrawerLayout
     private lateinit var navController : NavController
+    private lateinit var navView : NavigationView
     private lateinit var toolbar : Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,8 +35,10 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
         toolbar = binding.splashToolbar
         setSupportActionBar(toolbar)
         navController = findNavController(R.id.fragment_container)
-
+        navView = binding.navView
         drawerLayout = binding.drawerLayout
+
+
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
     }
 

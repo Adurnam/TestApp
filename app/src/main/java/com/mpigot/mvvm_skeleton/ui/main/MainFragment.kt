@@ -1,5 +1,8 @@
 package com.mpigot.mvvm_skeleton.ui.main
 
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.mpigot.mvvm_skeleton.R
 import com.mpigot.mvvm_skeleton.databinding.FragmentMainBinding
 import com.mpigot.mvvm_skeleton.ui.base.BaseFragment
@@ -23,6 +26,6 @@ class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>() {
     }
 
     override fun setUpObserver() {
-
+    
     }
 }

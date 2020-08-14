@@ -25,7 +25,7 @@ class LoginFragment() : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
 
     override fun setUpUi() {
         btLogin = binding.btAuthentication
-        (activity as SplashActivity).appBarState(false)
+        (activity as SplashActivity).appBarState(true)
         btLogin.setOnClickListener {
             binding.unbind()
             (activity as BaseActivity<*, *>)
